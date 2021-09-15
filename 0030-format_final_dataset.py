@@ -23,7 +23,7 @@ def main():
     df_moa = pd.read_csv('mechanismOfAction.tsv.gz', sep='\t')
     for i in ['targets', 'chemblIds']:
         df_moa[i] = df_moa[i].fillna('[]')
-        df_moa[i] = df_moa[i].apply(literal_eval) # convert to list type
+        df_moa[i] = df_moa[i].apply(literal_eval)  # convert to list type
         df_moa = df_moa.explode(i)
     df_moa = df_moa.rename({'chemblIds': 'id'}, axis='columns')
 

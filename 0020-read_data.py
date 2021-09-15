@@ -15,11 +15,12 @@ compression_opts = 'gzip'
 if LooseVersion(pd.__version__) > '1.0.0':
     compression_opts = dict(method='gzip', compresslevel=9)
 
+
 def main():
     """Run CLI."""
     parser = argparse.ArgumentParser(
         description="""
-            Json file
+            Format data.
             """
     )
 
